@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace='accountMapper'>
+	
+	<!-- 회원정보 입력 -->
+	<insert id='insertAccount' parameterType="AccountVO">
+		INSERT INTO account(
+		account_Id, account_Password, account_Name, account_Email, account_Tel, account_Addr)
+		VALUES(#{account_Id}, #{account_Password}, #{account_Name}, #{account_Email}, #{account_Tel}, #{account_Addr})
+	</insert>
+	
+</mapper>
