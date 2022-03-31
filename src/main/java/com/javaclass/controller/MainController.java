@@ -28,6 +28,7 @@ public class MainController {
 		return step;
 	}
 	
+
 	@RequestMapping("admin/adminCustomerList.do")
 	public void getCustomerList(MainVO vo, Model model) {
 		// 뷰 페이지 지정 (1) ModelAndView (2) void (3) String

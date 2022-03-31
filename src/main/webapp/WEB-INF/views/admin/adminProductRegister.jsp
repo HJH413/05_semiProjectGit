@@ -87,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label for="inputNum">재고량</label>
-                <input type="number" id="inputNum" class="form-control" name="product_Vol">
+                <input type="number" id="inputNum" class="form-control" name="product_Vol" placeholder="숫자만 입력">
               </div>
               <div class="form-group">
                 <label for="inputDescription">게시글 내용</label>
@@ -120,7 +120,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label for="inputModelPrice">상품 가격</label>
-                <input type="text" id="inputModelPrice" class="form-control" name="product_Price">
+                <input type="number" id="inputModelPrice" class="form-control" name="product_Price" placeholder="숫자만 입력">
               </div>
               <!--<div class="form-group">
                 <label for="inputEstimatedBudget">상품 담당자</label>

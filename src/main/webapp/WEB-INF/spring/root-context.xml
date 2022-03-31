@@ -33,6 +33,7 @@
   		<value>com.javaclass.domain.ProductVO</value>
   		<value>com.javaclass.domain.AccountVO</value>
   		<value>com.javaclass.domain.MainVO</value>
+  		<value>com.javaclass.domain.ChartVO</value>
   	</list>
   </property>
  </bean>

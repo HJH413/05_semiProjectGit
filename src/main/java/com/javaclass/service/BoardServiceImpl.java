@@ -27,11 +27,15 @@ public class BoardServiceImpl implements BoardService {
 		boardDAO.adminDeleteBoard(vo);
 	}
 
-	public BoardVO adminGetBoard(BoardVO vo) {
-		return boardDAO.adminGetBoard(vo);
+	public BoardVO adminGetBoard(String board_Seq) {
+		return boardDAO.adminGetBoard(board_Seq);
 	}
 
 	public List<BoardVO> adminGetBoardList(BoardVO vo) {
 		return boardDAO.adminGetBoardList(vo);
 	}
+	
+    public boolean checkBoard(String board_Seq, String board_Password) {
+        return boardDAO.checkBoard(board_Seq, board_Password);
+    }
 }

@@ -1,7 +1,12 @@
 package com.javaclass.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,6 +17,8 @@ import com.javaclass.domain.BoardVO;
 public class BoardDAOImpl implements BoardDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
+	@Inject
+	 SqlSession sqlSession;
 	// ----------------------------------------------------------------------
 	@Override
 	public void adminInsertBoard(BoardVO vo) {
@@ -35,9 +42,9 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public BoardVO adminGetBoard(BoardVO vo) {
+	public BoardVO adminGetBoard(String board_Seq) {
 		System.out.println("===> Mybatis adminGetBoard() 호출");
-		return (BoardVO) mybatis.selectOne("BoardDAO.adminGetBoard", vo);
+		return sqlSession.selectOne("BoardDAO.adminGetBoard", board_Seq);
 	}
 
 	@Override
@@ -45,5 +52,16 @@ public class BoardDAOImpl implements BoardDAO {
 		System.out.println("===> Mybatis getBoardList() 호출");
 		return mybatis.selectList("BoardDAO.adminGetBoardList", vo);
 	}
+	
+	 @Override
+	    public boolean checkBoard(String board_Seq, String board_Password) {
+	        boolean result = false;
+	        Map<String, String> map = new HashMap<String, String>();
+	        map.put("board_Seq", board_Seq);
+	        map.put("board_Password", board_Password);
+	        int count = sqlSession.selectOne("BoardDAO.checkBoard", map);
+	        if(count == 1) result= true;
+	        return result;
+	    }
 
 }

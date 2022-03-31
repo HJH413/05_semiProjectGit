@@ -62,5 +62,15 @@
 		WHERE board_Seq = #{board_Seq} AND board_Password = #{board_Password}
 	
 	</delete>
+	
+	<!-- 비밀번호 확인-->
+    <select id="checkBoard" resultType="int">
+        SELECT 
+            COUNT(*) 
+        FROM admin_Board
+        WHERE board_Seq = #{board_Seq} AND board_Password = #{board_Password}
+    </select>
+	
+	
 	<!-- ************************************************************************** -->
 </mapper>

@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class BoardVO {
 
-	int board_Seq;
+	String board_Seq;
 	String board_Title;
 	String board_Password;
 	String board_Category;
@@ -55,11 +55,11 @@ public class BoardVO {
 		}
 	}
 
-	public int getBoard_Seq() {
+	public String getBoard_Seq() {
 		return board_Seq;
 	}
 
-	public void setBoard_Seq(int board_Seq) {
+	public void setBoard_Seq(String board_Seq) {
 		this.board_Seq = board_Seq;
 	}
 

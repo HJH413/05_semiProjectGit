@@ -13,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>관리자 페이지</title>
 
 <%@ include file="../include/adminInclude/adminCSS.jsp" %> 
-  
+ 
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Sidebar -->
 <%@ include file="../include/adminInclude/adminSidebar.jsp" %> 
 
-<form action="adminBoardUpdate.do" enctype="multipart/form-data" method="post">
+<form enctype="multipart/form-data" method="post" name="formBoard" id="formBoard">
 <input name="board_Seq" type="hidden" value="${admin_Board.board_Seq}" />
 <!-- main -->
 <div class="content-wrapper">
@@ -64,14 +64,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label for="inputProjectLeader">삭제 및 수정 비밀번호</label>
-                <input type="password" id="inputProjectLeader" class="form-control" name="board_Password">
+                <input type="password" id="inputProjectLeader" class="form-control" name="board_Password" placeholder="수정 및 삭제시 비밀번호 입력">
               </div>
               <div class="form-group">
               	<label for="inputCategory">게시글 카테고리</label>
-                <input type="text" id="inputCategory" class="form-control" value=${admin_Board.board_Category } readonly >
-                <label for="inputStatus">게시글 카테고리 변경</label>
-                <select id="inputStatus" class="form-control custom-select" name="board_Category">
-                  <option selected disabled>카테고리 선택</option>
+                <select id="inputCategory" class="form-control custom-select" name="board_Category">
+                  <option selected>${admin_Board.board_Category }</option>
                   <option>공지사항</option>
                   <option>이벤트</option>
                   <option>광고</option>
@@ -121,8 +119,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="row">
         <div class="col-6">
           <a href="adminBoardList.do" class="btn btn-secondary">취소</a>
+          <div style="color: red;">${message}</div>  
           <input type="button" id="boardDeleteButton" value="삭제" class="btn btn-danger float-right">
-          <input type="submit" value="수정" class="btn btn-success float-right">
+          <input type="button" id="boardUpdateButton"value="수정" class="btn btn-success float-right">
         </div>
       </div>
     </section>
@@ -138,5 +137,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 <%@ include file="../include/adminInclude/adminPageScript/adminScript.jsp" %> 
 <!-- Page specific script -->
+<%@ include file="../include/adminInclude/adminPageScript/adminChange.jsp" %> 
 </body>
 </html>

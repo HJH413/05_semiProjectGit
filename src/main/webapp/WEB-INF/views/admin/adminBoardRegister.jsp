@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Sidebar -->
 <%@ include file="../include/adminInclude/adminSidebar.jsp" %> 
 
-<form action="adminBoardSave.do" enctype="multipart/form-data" method="post">
+<form action="adminBoardSave.do" enctype="multipart/form-data" method="post" id="boardForm">
 <!-- main -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -59,11 +59,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">게시글 제목</label>
-                <input type="text" id="inputName" class="form-control" name="board_Title">
+                <input type="text" id="inputName" class="form-control" name="board_Title" placeholder="제목">
               </div>
               <div class="form-group">
                 <label for="inputProjectLeader">삭제 및 수정 비밀번호</label>
-                <input type="password" id="inputProjectLeader" class="form-control" name="board_Password">
+                <input type="password" id="inputProjectLeader" class="form-control" name="board_Password" placeholder="비밀번호">
               </div>
               <div class="form-group">
                 <label for="inputStatus">게시글 카테고리</label>
@@ -115,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="row">
         <div class="col-6">
           <a href="adminBoardList.do" class="btn btn-secondary">취소</a>
-          <input type="submit" value="작성" class="btn btn-success float-right" required>
+          <input type="submit" value="작성" class="btn btn-success float-right" id="boardinput" required >
         </div>
       </div>
     </section>
@@ -131,5 +131,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 <%@ include file="../include/adminInclude/adminPageScript/adminScript.jsp" %> 
 <!-- Page specific script -->
+<%@ include file="../include/adminInclude/adminPageScript/adminChange.jsp" %> 
 </body>
 </html>

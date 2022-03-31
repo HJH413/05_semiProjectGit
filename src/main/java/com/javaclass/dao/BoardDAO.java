@@ -15,8 +15,10 @@ public interface BoardDAO {
 
 	public void adminDeleteBoard(BoardVO vo);
 
-	public BoardVO adminGetBoard(BoardVO vo);
+	public BoardVO adminGetBoard(String board_Seq);
 
 	public List<BoardVO> adminGetBoardList(BoardVO vo);
+	
+	public boolean checkBoard(String board_Seq, String board_Password);
 }	
 

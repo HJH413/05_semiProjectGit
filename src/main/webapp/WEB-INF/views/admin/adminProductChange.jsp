@@ -79,11 +79,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <input type="file" id="inputFile3" class="form-control" name="product2_File">
               </div>
               <div class="form-group">
-              <label for="inputCategory">기존 상품 카테고리</label>
-                <input type="text" id="inputCategory" class="form-control" value=${admin_Product.product_Category } readonly >
-                <label for="inputStatus">상품 카테고리 변경</label>
+                <label for="inputStatus">상품 카테고리</label>
                 <select id="inputStatus" class="form-control custom-select" name="product_Category">
-                  <option selected disabled>카테고리 선택</option>
+                  <option selected>${admin_Product.product_Category }</option>
                   <option>스마트폰</option>
                   <option>데스크탑</option>
                   <option>노트북</option>
@@ -94,7 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label for="inputNum">재고량</label>
-                <input type="number" id="inputNum" class="form-control" name="product_Vol" value="${admin_Product.product_Vol}">
+                <input type="number" id="inputNum" class="form-control" name="product_Vol" value="${admin_Product.product_Vol}" placeholder="숫자만 입력">
               </div>
               <div class="form-group">
                 <label for="inputDescription">게시글 내용</label>
@@ -127,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label for="inputModelPrice">상품 가격</label>
-                <input type="text" id="inputModelPrice" class="form-control" name="product_Price" value="${admin_Product.product_Price}">
+                <input type="number" id="inputModelPrice" class="form-control" name="product_Price" value="${admin_Product.product_Price}" placeholder="숫자만 입력">
               </div>
               <!--<div class="form-group">
                 <label for="inputEstimatedBudget">상품 담당자</label>

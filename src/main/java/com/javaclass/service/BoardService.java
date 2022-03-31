@@ -16,9 +16,11 @@ public interface BoardService {
 	void adminDeleteBoard(BoardVO vo);
 
 	// 글 상세 조회
-	BoardVO adminGetBoard(BoardVO vo);
+	BoardVO adminGetBoard(String board_Seq);
 
 	// 글 목록 조회
 	List<BoardVO> adminGetBoardList(BoardVO vo);
+	
+	public boolean checkBoard(String board_Seq, String board_Password);
 
 }
